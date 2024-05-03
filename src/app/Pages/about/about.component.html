@@ -1,0 +1,25 @@
+<p class="text-3xl font-bold underline text-fuchsia-950">about works!</p>
+<form [formGroup]="loginData" (ngSubmit)="submit()">
+    <label for="username">username:</label>
+    <input type="text" id="username" formControlName="username">
+    <br>
+    <label for="password">password:</label>
+    <input type="text" id="password" formControlName="password">
+    <br>
+
+    <button type="submit">GO</button>
+</form>
+
+<div *ngIf="userData | async as data">
+    {{ data.firstName }}
+    {{ data.lastName }}
+    <br>
+    {{ data.username }}
+    <br>
+    {{ data.gender }}
+    <br>
+    {{ data.email }}
+    <br>
+    
+    <img [src]="data.image" alt="Profile picture">
+</div>
