@@ -1,0 +1,24 @@
+<p>home works!</p>
+
+<p>Coloque seu nome</p>
+<input type="text" [(ngModel)]="nome">
+
+<p>Coloque sua sobrenome</p>
+<input type="text" [(ngModel)]="sobrenome">
+
+<button type="submit">Enviar</button>
+
+<form [formGroup]="dadosPessoa" (ngSubmit)=submit()>
+    <p>Coloque seu nome</p>
+    <input type="text" [formControl]="dadosPessoa.controls.nomePessoa">
+
+    <p>Coloque sua sobrenome</p>
+    <input type="text" [formControl]="dadosPessoa.controls.sobrenomePessoa">
+
+    <button type="submit">Enviar</button>
+
+</form>
+
+
+{{ nome }}
+{{ sobrenome }}
